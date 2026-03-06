@@ -1,8 +1,13 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from scipy.stats import skew, kurtosis, iqr, entropy
 from scipy.fft import fft
-from ficheiros.constantes import COL, COL_WITH_PARTICIPANT
-from ficheiros.caracteristicas import *
+from misc.ficheiros.constantes import COL, COL_WITH_PARTICIPANT
+from misc.ficheiros.caracteristicas import *
 
 def calcularMean(data):
     return np.mean(data)

@@ -1,3 +1,8 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
@@ -5,9 +10,9 @@ from skrebate import ReliefF
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from ficheiros.outliers import normalizeZscore, normalizeZscore_with_stats
+from misc.ficheiros.outliers import normalizeZscore, normalizeZscore_with_stats
 
-def load_split_arrays(embeddings_path="meta2/embeddings.npy", y_path="meta2/y.npy", participants_path="meta2/participants.npy"):
+def load_split_arrays(embeddings_path="data/embeddings.npy", y_path="data/y.npy", participants_path="data/participants.npy"):
     X = np.load(embeddings_path)
     y = np.load(y_path) #y é oarray de labels (atividades)
     participants = np.load(participants_path)
@@ -139,7 +144,7 @@ if __name__ == "__main__":
         split_602020["y_val"],
         split_602020["y_test"]
     ) 
-    np.save("meta2/scenarios/embeddings_scenario_a_602020.npy", scenario_a_602020)
+    np.save("results/plots/embeddings_scenario_a_602020.npy", scenario_a_602020)
 
     # Para o split 9/3/3
     scenario_a_933 = create_scenario_all_features(
@@ -150,7 +155,7 @@ if __name__ == "__main__":
         split_933["y_val"],
         split_933["y_test"]
     )
-    np.save("meta2/scenarios/embeddings_scenario_a_933.npy", scenario_a_933)
+    np.save("results/plots/embeddings_scenario_a_933.npy", scenario_a_933)
 
     # Para o split 60/20/20 com PCA
     scenario_b_602020 = create_scenario_pca_90(
@@ -161,7 +166,7 @@ if __name__ == "__main__":
         split_602020["y_val"],
         split_602020["y_test"]
     )
-    np.save("meta2/scenarios/embeddings_scenario_b_602020_n_components.npy", scenario_b_602020)
+    np.save("results/plots/embeddings_scenario_b_602020_n_components.npy", scenario_b_602020)
 
 
     # Para o split 9/3/3 com PCA
@@ -173,7 +178,7 @@ if __name__ == "__main__":
         split_933["y_val"],
         split_933["y_test"]
     )
-    np.save("meta2/scenarios/embeddings_scenario_b_933_n_components.npy", scenario_b_933)
+    np.save("results/plots/embeddings_scenario_b_933_n_components.npy", scenario_b_933)
     
 
     # Para o split 60/20/20 com ReliefF
@@ -185,9 +190,9 @@ if __name__ == "__main__":
         split_602020["y_val"],
         split_602020["y_test"]
     )
-    np.save("meta2/scenarios/embeddings_scenario_c_602020_top15_idx.npy", scenario_c_602020)
+    np.save("results/plots/embeddings_scenario_c_602020_top15_idx.npy", scenario_c_602020)
 
-    np.save("meta2/scenario_c_602020_top15_idx.npy", scenario_c_602020["top15_idx"])
+    np.save("data/scenario_c_602020_top15_idx.npy", scenario_c_602020["top15_idx"])
 
     # Para o split 9/3/3 com ReliefF
     scenario_c_933 = create_scenario_relieff_top15(
@@ -198,4 +203,4 @@ if __name__ == "__main__":
         split_933["y_val"],
         split_933["y_test"]
     )
-    np.save("meta2/scenarios/embeddings_scenario_c_933_top15_idx.npy", scenario_c_933)
+    np.save("results/plots/embeddings_scenario_c_933_top15_idx.npy", scenario_c_933)

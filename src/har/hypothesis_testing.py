@@ -1,3 +1,8 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from scipy import stats
 from sklearn.model_selection import train_test_split
@@ -5,19 +10,19 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from meta2.splitFeatures import create_scenario_pca_90
-from classifier import knn_classifier, calculate_accuracy
+from src.har.classifier import knn_classifier, calculate_accuracy
 
 def load_data():
     print("Loading data...")
     #load embeddings
-    X_emb = np.load("meta2/embeddings.npy")
-    y_emb = np.load("meta2/y.npy")
-    part_emb = np.load("meta2/participants.npy")
+    X_emb = np.load("data/embeddings.npy")
+    y_emb = np.load("data/y.npy")
+    part_emb = np.load("data/participants.npy")
     
     #load features
-    X_feat = np.load("meta2/features.npy")
-    y_feat = np.load("meta2/y_features.npy")
-    part_feat = np.load("meta2/participants_features.npy")
+    X_feat = np.load("data/features.npy")
+    y_feat = np.load("data/y_features.npy")
+    part_feat = np.load("data/participants_features.npy")
     
     return (X_emb, y_emb, part_emb), (X_feat, y_feat, part_feat)
 

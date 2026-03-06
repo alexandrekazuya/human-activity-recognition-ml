@@ -1,10 +1,15 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from mod4_2 import criarJanelasComParticipantes, extrairFeaturesJanela
-from ficheiros.initializar import importParaTabelaComParticipante
+from scripts.module4_feature_statistics import criarJanelasComParticipantes, extrairFeaturesJanela
+from misc.ficheiros.initializar import importParaTabelaComParticipante
 
 
 def build_features_from_tabela(participantes=15, devices=5):
@@ -36,9 +41,9 @@ def build_features_from_tabela(participantes=15, devices=5):
 
     print("participantes unique: ", np.unique(parts))
 
-    np.save("meta2/features.npy", X)
-    np.save("meta2/y_features.npy", y)
-    np.save("meta2/participants_features.npy", parts)
+    np.save("data/features.npy", X)
+    np.save("data/y_features.npy", y)
+    np.save("data/participants_features.npy", parts)
 
     return X, y, parts
 

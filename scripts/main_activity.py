@@ -1,21 +1,26 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
-from ficheiros.constantes import *
-from ficheiros.initializar import importParaTabela, groupByDeviceActivity, importParaTabelaComParticipante
-from ficheiros.plots import plotAtividade, plotOutliers, plot3D
-from ficheiros.caracteristicas import calcularAccelerometer, calcularGyroscope, calcularMagnometer
-from ficheiros.outliers import getOutliers, densidadeOutliersPorAtividade, getZscore, outlierKmeansDistancia, outlierKmeansTamanho
-from mod3_1 import plot_by_device_activity
-from mod3_3 import plot_outliers_por_atividade
-from mod3_6 import kMeans
-from mod4_2 import *
-from mod4_3ate4_6 import normalizar_e_PCA_e_variancia, plot4_4, fisher_relieff
+from misc.ficheiros.constantes import *
+from misc.ficheiros.initializar import importParaTabela, groupByDeviceActivity, importParaTabelaComParticipante
+from misc.ficheiros.plots import plotAtividade, plotOutliers, plot3D
+from misc.ficheiros.caracteristicas import calcularAccelerometer, calcularGyroscope, calcularMagnometer
+from misc.ficheiros.outliers import getOutliers, densidadeOutliersPorAtividade, getZscore, outlierKmeansDistancia, outlierKmeansTamanho
+from scripts.module3_outliers_boxplot import plot_by_device_activity
+from scripts.module3_zscore_plots import plot_outliers_por_atividade
+from scripts.module3_kmeans_outliers import kMeans
+from scripts.module4_feature_statistics import *
+from scripts.module4_pca_relief import normalizar_e_PCA_e_variancia, plot4_4, fisher_relieff
 from multiprocessing import Pool, cpu_count
 from functools import partial
-from ficheiros.constantes import *
-from smote import smote
-from deployment import predict
+from misc.ficheiros.constantes import *
+from src.har.smote import smote
+from src.har.deployment import predict
 
 #---colunas-
 COL = {

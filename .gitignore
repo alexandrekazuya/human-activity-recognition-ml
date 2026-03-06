@@ -1,0 +1,14 @@
+# Environments, cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# Editor configs
+.vscode/
+.idea/
+
+# Large dataset ignoring 
+data/FORTH_TRACE_DATASET-master/

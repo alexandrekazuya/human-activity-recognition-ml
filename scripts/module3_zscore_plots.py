@@ -1,10 +1,15 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import matplotlib.pyplot as plt
 import numpy as np
-from ficheiros.initializar import groupByDeviceActivity, importParaTabela
-from ficheiros.constantes import *
-from ficheiros.caracteristicas import *
-from ficheiros.outliers import getZscore
-from ficheiros.plots import plotOutliers
+from misc.ficheiros.initializar import groupByDeviceActivity, importParaTabela
+from misc.ficheiros.constantes import *
+from misc.ficheiros.caracteristicas import *
+from misc.ficheiros.outliers import getZscore
+from misc.ficheiros.plots import plotOutliers
 
 
 def plot_outliers_por_atividade(k, function, devices, grid, activities):

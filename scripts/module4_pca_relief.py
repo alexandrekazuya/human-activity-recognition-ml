@@ -1,10 +1,15 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import numpy as np
-from mod4_2 import criarJanelas, extrairFeaturesJanela
-from ficheiros.initializar import importParaTabela
-from ficheiros.outliers import normalizeZscore
+from scripts.module4_feature_statistics import criarJanelas, extrairFeaturesJanela
+from misc.ficheiros.initializar import importParaTabela
+from misc.ficheiros.outliers import normalizeZscore
 
 #from skfeature.function.similarity_based import fisher_score
 from skrebate import ReliefF

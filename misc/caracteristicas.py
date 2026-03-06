@@ -1,5 +1,10 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
-from ficheiros.constantes import COL
+from misc.ficheiros.constantes import COL
 
 #----formula para o accelerometer
 def calcularAccelerometer(tabela):

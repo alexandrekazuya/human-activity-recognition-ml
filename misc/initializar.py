@@ -1,10 +1,15 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 
 #--- extrair dados---
 def importParaTabela(participantes, devices):
     for p in range(0,participantes):
         for d in range(1, devices+1):
-            path = f'./FORTH_TRACE_DATASET-master/part{p}/part{p}dev{d}.csv'
+            path = f'./data/FORTH_TRACE_DATASET-master/part{p}/part{p}dev{d}.csv'
             if (p==0 and d==1):
                 tabelaGigante = np.genfromtxt(path, delimiter=',')
                 continue
@@ -17,7 +22,7 @@ def importParaTabelaComParticipante(participantes, devices):
     primeira = True
     for p in range(0,participantes):
         for d in range(1, devices+1):
-            path = f'./FORTH_TRACE_DATASET-master/part{p}/part{p}dev{d}.csv'
+            path = f'./data/FORTH_TRACE_DATASET-master/part{p}/part{p}dev{d}.csv'
             try:
                 dados = np.genfromtxt(path, delimiter=',')
                 if dados.size == 0:

@@ -1,5 +1,10 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
-from classifier import knn_classifier, classification_metrics, print_metrics, calculate_accuracy
+from src.har.classifier import knn_classifier, classification_metrics, print_metrics, calculate_accuracy
 
 def evaluate_scenario_data(X_train, y_train, X_val, y_val, X_test, y_test, scenario_name):
     print(f"\nEvaluating: {scenario_name}")
@@ -32,20 +37,20 @@ if __name__ == "__main__":
     
     scenarios = [
         # Embeddings
-        ("meta2/scenarios/embeddings_scenario_a_933.npy", "Embeddings - Scenario A (9-3-3)"),
-        ("meta2/scenarios/embeddings_scenario_b_933_n_components.npy", "Embeddings - Scenario B (9-3-3)"),
-        ("meta2/scenarios/embeddings_scenario_c_933_top15_idx.npy", "Embeddings - Scenario C (9-3-3)"),
-        ("meta2/scenarios/embeddings_scenario_a_602020.npy", "Embeddings - Scenario A (60-20-20)"),
-        ("meta2/scenarios/embeddings_scenario_b_602020_n_components.npy", "Embeddings - Scenario B (60-20-20)"),
-        ("meta2/scenarios/embeddings_scenario_c_602020_top15_idx.npy", "Embeddings - Scenario C (60-20-20)"),
+        ("results/plots/embeddings_scenario_a_933.npy", "Embeddings - Scenario A (9-3-3)"),
+        ("results/plots/embeddings_scenario_b_933_n_components.npy", "Embeddings - Scenario B (9-3-3)"),
+        ("results/plots/embeddings_scenario_c_933_top15_idx.npy", "Embeddings - Scenario C (9-3-3)"),
+        ("results/plots/embeddings_scenario_a_602020.npy", "Embeddings - Scenario A (60-20-20)"),
+        ("results/plots/embeddings_scenario_b_602020_n_components.npy", "Embeddings - Scenario B (60-20-20)"),
+        ("results/plots/embeddings_scenario_c_602020_top15_idx.npy", "Embeddings - Scenario C (60-20-20)"),
         
         # Features
-        ("meta2/scenarios/features_scenario_a_933.npy", "Features - Scenario A (9-3-3)"),
-        ("meta2/scenarios/features_scenario_b_933_n_components.npy", "Features - Scenario B (9-3-3)"),
-        ("meta2/scenarios/features_scenario_c_933_top15_idx.npy", "Features - Scenario C (9-3-3)"),
-        ("meta2/scenarios/features_scenario_a_602020.npy", "Features - Scenario A (60-20-20)"),
-        ("meta2/scenarios/features_scenario_b_602020_n_components.npy", "Features - Scenario B (60-20-20)"),
-        ("meta2/scenarios/features_scenario_c_602020_top15_idx.npy", "Features - Scenario C (60-20-20)"),
+        ("results/plots/features_scenario_a_933.npy", "Features - Scenario A (9-3-3)"),
+        ("results/plots/features_scenario_b_933_n_components.npy", "Features - Scenario B (9-3-3)"),
+        ("results/plots/features_scenario_c_933_top15_idx.npy", "Features - Scenario C (9-3-3)"),
+        ("results/plots/features_scenario_a_602020.npy", "Features - Scenario A (60-20-20)"),
+        ("results/plots/features_scenario_b_602020_n_components.npy", "Features - Scenario B (60-20-20)"),
+        ("results/plots/features_scenario_c_602020_top15_idx.npy", "Features - Scenario C (60-20-20)"),
     ]
 
     for filename, name in scenarios:

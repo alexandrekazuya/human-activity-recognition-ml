@@ -1,7 +1,12 @@
-from ficheiros.initializar import importParaTabela
-from ficheiros.constantes import COL
-from ficheiros.caracteristicas import calcularAccelerometer, calcularMagnometer, calcularGyroscope
-from ficheiros.outliers import densidadeOutliersPorAtividade
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from misc.ficheiros.initializar import importParaTabela
+from misc.ficheiros.constantes import COL
+from misc.ficheiros.caracteristicas import calcularAccelerometer, calcularMagnometer, calcularGyroscope
+from misc.ficheiros.outliers import densidadeOutliersPorAtividade
 
 tabela = importParaTabela(15, 5)
 

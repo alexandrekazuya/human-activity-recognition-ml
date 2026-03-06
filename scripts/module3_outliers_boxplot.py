@@ -1,9 +1,14 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 import matplotlib.pyplot as plt
-from ficheiros.initializar import *
-from ficheiros.constantes import COL
-from ficheiros.caracteristicas import calcularAccelerometer, calcularMagnometer, calcularGyroscope
-from ficheiros.plots import plotAtividade
+from misc.ficheiros.initializar import *
+from misc.ficheiros.constantes import COL
+from misc.ficheiros.caracteristicas import calcularAccelerometer, calcularMagnometer, calcularGyroscope
+from misc.ficheiros.plots import plotAtividade
 
 
 

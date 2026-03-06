@@ -1,6 +1,11 @@
-from mod4_2 import extrairFeaturesJanela
-from mod4_3ate4_6 import normalizar_e_PCA_e_variancia
-from classifier import knn_classifier
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from scripts.module4_feature_statistics import extrairFeaturesJanela
+from scripts.module4_pca_relief import normalizar_e_PCA_e_variancia
+from src.har.classifier import knn_classifier
 
 
 
@@ -17,7 +22,7 @@ def predict(data):
 
     # Load model
 
-    model = np.load('meta2/scenarios/features_scenario_b_602020_n_components.npy', allow_pickle= True).item()
+    model = np.load('results/plots/features_scenario_b_602020_n_components.npy', allow_pickle= True).item()
 
     x_train = model["X_train"]
     y_train = model["y_train"]

@@ -1,3 +1,8 @@
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 # build_embeddings_from_tabela.py
 
 import numpy as np
@@ -6,9 +11,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from embeddings_extractor import acc_segmentation, resample_to_30hz_5s, load_model
-from ficheiros.constantes import COL_WITH_PARTICIPANT as COL
-from ficheiros.initializar import importParaTabelaComParticipante
+from src.har.embeddings_extractor import acc_segmentation, resample_to_30hz_5s, load_model
+from misc.ficheiros.constantes import COL_WITH_PARTICIPANT as COL
+from misc.ficheiros.initializar import importParaTabelaComParticipante
 
 def build_embeddings_from_tabela(tabela):
     data = np.asarray(tabela)
@@ -69,6 +74,6 @@ if __name__ == "__main__":
 
     print("embeddings:", embeddings.shape, " | y:", y.shape, " | participants:", participants.shape)
 
-    np.save("meta2/embeddings.npy", embeddings)
-    np.save("meta2/y.npy", y)
-    np.save("meta2/participants.npy", participants)
+    np.save("data/embeddings.npy", embeddings)
+    np.save("data/y.npy", y)
+    np.save("data/participants.npy", participants)
