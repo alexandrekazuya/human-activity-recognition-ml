@@ -1,0 +1,26 @@
+Running 10 iterations...
+Iteracao 1: Embeddings=0.7422, Features=0.6840, PCA=0.7828
+Iteracao 2: Embeddings=0.7158, Features=0.6756, PCA=0.7844
+Iteracao 3: Embeddings=0.7148, Features=0.6826, PCA=0.7831
+Iteracao 4: Embeddings=0.7363, Features=0.6776, PCA=0.7901
+Iteracao 5: Embeddings=0.7275, Features=0.6749, PCA=0.7932
+Iteracao 6: Embeddings=0.7559, Features=0.6804, PCA=0.7875
+Iteracao 7: Embeddings=0.7412, Features=0.6842, PCA=0.7895
+Iteracao 8: Embeddings=0.7275, Features=0.6868, PCA=0.7927
+Iteracao 9: Embeddings=0.7539, Features=0.6862, PCA=0.7925
+Iteracao 10: Embeddings=0.7236, Features=0.6855, PCA=0.7932
+
+------Results---
+Embeddings (All): Mean=0.7339, Std=0.0137
+Features (All):   Mean=0.6818, Std=0.0042
+Features (PCA):   Mean=0.7889, Std=0.0040
+
+-----Hypothesis testing (vs Features (PCA))--
+
+comparacao: Features (PCA) vs Embeddings (All)
+Paired ttest: p-value = 7.1439e-07
+conclusao: Significant
+
+comparacao: Features (PCA) vs Features (All)
+Paired ttest: p-value = 4.2975e-13
+conclusao: Significant
